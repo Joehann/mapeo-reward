@@ -1,10 +1,11 @@
 import {KPI} from "./sections/KPI.tsx";
 import {Container} from "react-bootstrap";
+import {Activities} from "./sections/Activities.tsx";
 
 const Dashboard = () => {
     return <Container>
-        <h2>Indicateurs clés</h2>
         <KPI/>
+        <Activities/>
     </Container>;
 };
 

@@ -1,1 +1,17 @@
 @forward 'reset';
+
+$mapeo-primary: #0EB0C3;
+$mapeo-dark: #222128;
+
+.bg-mapeo- {
+  &primary {
+    background: $mapeo-primary !important;
+  }
+
+  &dark {
+    background: $mapeo-dark !important;
+  }
+}
+
+
+

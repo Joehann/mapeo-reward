@@ -10,5 +10,5 @@ export const KPICard = ({title, value}: Props) : ReactElement => {
 
 type Props = {
     title: string,
-    value: string,
+    value: string | number,
 }

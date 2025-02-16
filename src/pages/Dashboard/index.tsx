@@ -1,9 +1,12 @@
 import {KPI} from "./sections/KPI.tsx";
+import {Container} from "react-bootstrap";
 
-const Index = () => {
-  return  <>
-   <KPI/>
-  </>;
+const Dashboard = () => {
+    return <Container>
+        <h2>Indicateurs clés</h2>
+        <KPI/>
+    </Container>;
 };
 
-export default Index;
+export default Dashboard;
+

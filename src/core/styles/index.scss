@@ -1,11 +1,14 @@
 @forward 'reset';
 
-$mapeo-primary: #0EB0C3;
+$mapeo-blue: #0EB0C3;
 $mapeo-dark: #222128;
+$mapeo-olive: #ADC4BA;
+$mapeo-olive-hover: #83a197;
+$mapeo-green: #3AFBBE;
 
 .bg-mapeo- {
   &primary {
-    background: $mapeo-primary !important;
+    background: $mapeo-blue !important;
   }
 
   &dark {
@@ -13,9 +16,27 @@ $mapeo-dark: #222128;
   }
 }
 
+.color-mapeo- {
+  &primary {
+    color: $mapeo-blue !important;
+  }
+
+  &olive {
+    color: $mapeo-olive !important;
+
+    &:hover {
+      color: $mapeo-olive-hover !important;
+    }
+  }
+}
+
 a {
-  color: $mapeo-primary !important;
+  color: $mapeo-blue !important;
   text-decoration: none !important;
+
+  &:hover {
+    color: $mapeo-green !important;
+  }
 }
 
 

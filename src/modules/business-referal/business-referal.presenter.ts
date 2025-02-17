@@ -5,17 +5,17 @@ import {kpiToDisplayMapper} from "./application/mapper/kpi.mapper.ts";
 export const businessReferalPresenter = (): Presenter => {
     const repository = new BusinessReferalFakeRepository()
 
-    const handleGetKPY = async (set: (kpi: KpiToDisplayType) => void) => {
-        const response = await repository.getKpi()
-        const kpi = kpiToDisplayMapper(response)
-        set(kpi)
+    const handleGetKpi = async (set: (kpi: KpiToDisplayType) => void) => {
+        const KpiFromApi = await repository.getKpi()
+        const kpiToDisplay = kpiToDisplayMapper(KpiFromApi)
+        set(kpiToDisplay)
     }
 
     return {
-        handleGetKPY
+        handleGetKpi
     }
 }
 
 type Presenter = {
-    handleGetKPY: (set: (kpi: KpiToDisplayType) => void) => Promise<void>
+    handleGetKpi: (set: (kpi: KpiToDisplayType) => void) => Promise<void>
 }

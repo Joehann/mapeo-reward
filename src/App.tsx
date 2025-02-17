@@ -1,16 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Index from "./pages/Dashboard"
+import {RouterProvider} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {router} from "./react/router.tsx";
 
 function App() {
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Index />} />
-      </Routes>
-    </Router>
-  )
+    return <RouterProvider router={router}/>
 }
 
 export default App

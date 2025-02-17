@@ -1,16 +1,16 @@
 import {Col, Row} from "react-bootstrap";
 import {KPICard} from "../components/Card.tsx";
-import {businessReferalPresenter} from "../../../modules/business-referal/business-referal.presenter.ts";
-import {KpiToDisplayType} from "../../../modules/business-referal/domain/types/kpi.type.ts";
+import {businessReferalPresenter} from "../../../../modules/business-referal/business-referal.presenter.ts";
+import {KpiToDisplayType} from "../../../../modules/business-referal/domain/types/kpi.type.ts";
 import {useEffect, useState} from "react";
 
 export const KPI = () => {
-    const {handleGetKPY} = businessReferalPresenter()
+    const {handleGetKpi} = businessReferalPresenter()
     const [kpi, setKpi] = useState<KpiToDisplayType | null>(null)
 
     useEffect(() => {
         if (!kpi)
-            void handleGetKPY(setKpi);
+            void handleGetKpi(setKpi);
     }, [kpi])
 
     if (!kpi) return null

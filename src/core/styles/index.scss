@@ -1,10 +1,12 @@
 @forward 'reset';
 
 $mapeo-blue: #0EB0C3;
+$mapeo-blue-hover: #0b9db1;
 $mapeo-dark: #222128;
 $mapeo-olive: #ADC4BA;
 $mapeo-olive-hover: #83a197;
-$mapeo-green: #3AFBBE;
+$mapeo-green: #2eefb3;
+$mapeo-green-dark: #27e1a8;
 
 .bg-mapeo- {
   &primary {
@@ -36,6 +38,69 @@ a {
 
   &:hover {
     color: $mapeo-green !important;
+  }
+}
+
+.button-mapeo- {
+  &blue {
+    background: $mapeo-blue !important;
+    border-color: $mapeo-blue !important;
+
+    &:hover {
+      background: $mapeo-blue-hover !important;
+      border-color: $mapeo-blue-hover !important;
+      color: white !important;
+    }
+
+    &-outline {
+      background: none !important;
+      border-color: $mapeo-blue !important;
+      color: $mapeo-blue !important;
+
+      &:hover {
+        background: $mapeo-blue !important;
+        color: white !important;
+      }
+    }
+  }
+
+  &olive {
+    background: $mapeo-olive !important;
+    border-color: $mapeo-olive !important;
+
+    &:hover {
+      background: $mapeo-olive-hover !important;
+      border-color: $mapeo-olive-hover !important;
+      color: white !important;
+    }
+
+    &-outline {
+      background: none !important;
+      border-color: $mapeo-olive !important;
+      color: $mapeo-olive !important;
+
+      &:hover {
+        background: $mapeo-olive !important;
+        color: white !important;
+      }
+    }
+  }
+
+  &green {
+    background: $mapeo-green !important;
+    border-color: $mapeo-green !important;
+    color: #111 !important;
+
+    &:hover {
+      background: $mapeo-green-dark !important;
+      border-color: $mapeo-green-dark !important;
+    }
+
+    &-outline {
+      background: none !important;
+      border-color: $mapeo-green !important;
+      color: $mapeo-green !important;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import {Container, Image, Nav, Navbar} from "react-bootstrap";
+import {Badge, Button, Container, Image, Nav, Navbar} from "react-bootstrap";
 import Logo from "../../../assets/logo.png"
 import './navbar.scss'
 
@@ -12,7 +12,10 @@ export const MapeoNavbar = () => {
                 <Nav>
                     <Nav.Link href="/finders" className={'color-mapeo-olive'}>Apporteurs</Nav.Link>
                     <Nav.Link href="/business-referrals" className={'color-mapeo-olive'}>Affaires</Nav.Link>
-                    <Nav.Link href="messenger" className={'color-mapeo-olive'}>Messagerie</Nav.Link>
+                    <Nav.Link href="/messenger" className={'color-mapeo-olive'}>Messagerie <Badge bg="danger"
+                                                                                                  pill>3</Badge></Nav.Link>
+                    <Button variant="light" size={"sm"} className={"ml-5"} onClick={() => {
+                    }}>Se déconnecter</Button>
                 </Nav>
             </Container>
         </Navbar>

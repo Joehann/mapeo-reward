@@ -3,6 +3,7 @@
 $mapeo-blue: #0EB0C3;
 $mapeo-blue-hover: #0b9db1;
 $mapeo-dark: #222128;
+$mapeo-dark-hover: #49494e;
 $mapeo-olive: #ADC4BA;
 $mapeo-olive-hover: #83a197;
 $mapeo-green: #2eefb3;
@@ -64,6 +65,28 @@ a {
     }
   }
 
+  &dark {
+    background: $mapeo-dark !important;
+    border-color: $mapeo-dark !important;
+
+    &:hover {
+      background: $mapeo-dark-hover !important;
+      border-color: $mapeo-dark-hover !important;
+      color: white !important;
+    }
+
+    &-outline {
+      background: none !important;
+      border-color: $mapeo-dark !important;
+      color: $mapeo-dark !important;
+
+      &:hover {
+        background: $mapeo-dark!important;
+        color: white !important;
+      }
+    }
+  }
+
   &olive {
     background: $mapeo-olive !important;
     border-color: $mapeo-olive !important;
@@ -100,6 +123,11 @@ a {
       background: none !important;
       border-color: $mapeo-green !important;
       color: $mapeo-green !important;
+      &:hover {
+        background: $mapeo-green !important;
+        border-color: $mapeo-green !important;
+        color: white !important;
+      }
     }
   }
 }

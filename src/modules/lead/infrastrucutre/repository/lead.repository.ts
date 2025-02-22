@@ -1,7 +1,8 @@
 import {KPIFakeData} from "../fake-data/kpi.fake-data.ts";
 import {KpiFromApiType} from "../../domain/types/kpi.type.ts";
+import {ILeadRepository} from "./lead.repository.interface.ts";
 
-export class BusinessReferalFakeRepository {
+export class LeadRepository implements ILeadRepository {
     public async getKpi(): Promise<KpiFromApiType> {
         return KPIFakeData
     }

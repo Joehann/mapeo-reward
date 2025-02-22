@@ -1,16 +1,18 @@
 import {Col, Row} from "react-bootstrap";
 import {KPICard} from "../components/Card.tsx";
-import {businessReferalPresenter} from "../../../../modules/business-referal/business-referal.presenter.ts";
-import {KpiToDisplayType} from "../../../../modules/business-referal/domain/types/kpi.type.ts";
+import {KpiToDisplayType} from "../../../../modules/lead/domain/types/kpi.type.ts";
 import {useEffect, useState} from "react";
+import {usePresenters} from "../../../hooks/usePresenters.tsx";
 
 export const KPI = () => {
-    const {handleGetKpi} = businessReferalPresenter()
+    const presenters = usePresenters();
+    const {handleGetKpi} = presenters.lead()
     const [kpi, setKpi] = useState<KpiToDisplayType | null>(null)
 
     useEffect(() => {
         if (!kpi)
             void handleGetKpi(setKpi);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [kpi])
 
     if (!kpi) return null

@@ -1,12 +1,9 @@
-export const formatCurrency = ({totalAmount, currency}: { totalAmount: number; currency: string }): string => {
-    const currencySymbols: Record<string, string> = {
-        EUR: '€',
-        USD: '$',
-    };
+import {currencyDictionnary} from "../../dictionaries/currency.dictionnary.ts";
 
-    if (!currencySymbols[currency]) {
+export const formatCurrency = ({totalAmount, currency}: { totalAmount: number; currency: string }): string => {
+    if (!currencyDictionnary[currency]) {
         throw new Error(`Unsupported currency: ${currency}`);
     }
 
-    return `${totalAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ${currencySymbols[currency]}`;
+    return `${totalAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ${currencyDictionnary[currency]}`;
 }

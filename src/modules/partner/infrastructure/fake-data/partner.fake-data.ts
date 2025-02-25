@@ -1,6 +1,6 @@
-import {BusinessPartner} from "../../domain/business-partner.type.ts";
+import {Partner} from "../../domain/partner.type.ts";
 
-export const businessPartnerFake: BusinessPartner = {
+export const partnerFake: Partner = {
     id: "123e4567-e89b-12d3-a456-426614174000",
     firstname: "John",
     lastname: "doe",

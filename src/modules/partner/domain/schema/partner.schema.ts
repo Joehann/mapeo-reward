@@ -1,7 +1,7 @@
 import {baseSchema} from "../../../../core/schema/base.schema.ts";
 import {z} from "zod";
 
-export const businessPartnerSchema = baseSchema.extend({
+export const partnerSchema = baseSchema.extend({
     firstname: z.string(),
     lastname: z.string(),
     email: z.string(),

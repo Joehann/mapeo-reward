@@ -4,6 +4,8 @@ import Dashboard from "./pages/Dashboard";
 import {LoginPage} from "./pages/Login";
 import {CreatePartnerPage} from "./pages/CreatePartner";
 import {CreateDealPage} from "./pages/CreateDeal";
+import {PartnerListPage} from "./pages/PartnerListPage";
+import {DealListPage} from "./pages/DealListPage";
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +15,9 @@ export const router = createBrowserRouter([
             {index: true, element: <Dashboard/>},
             {path: '/login', element: <LoginPage/>},
             {path: '/create-partner', element: <CreatePartnerPage/>},
-            {path: '/create-deal', element: <CreateDealPage/>}
+            {path: '/create-deal', element: <CreateDealPage/>},
+            {path: '/partners', element: <PartnerListPage/>},
+            {path: 'deals', element: <DealListPage/>},
         ],
     },
 ]);

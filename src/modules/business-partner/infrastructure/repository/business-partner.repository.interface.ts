@@ -1,3 +1,5 @@
+import {BusinessPartner, BusinessPartnerToCreate} from "../../domain/business-partner.type.ts";
+
 export interface IBusinessPartner {
-    create: () => Promise<void>
+    create: (partner: BusinessPartnerToCreate) => Promise<BusinessPartner>
 }

@@ -1,8 +1,9 @@
 import {IBusinessPartner} from "./repository/business-partner.repository.interface.ts";
+import {BusinessPartner} from "../domain/business-partner.type.ts";
 
 export const businessPartnerPresenter = (repository: IBusinessPartner) => (): BusinessPartnerPresenterType => {
-    const handleInviteBusinessPartner = async () => {
-        return await repository.create()
+    const handleInviteBusinessPartner = async (partner: BusinessPartner) => {
+        return await repository.create(partner)
     }
 
     return {
@@ -11,5 +12,5 @@ export const businessPartnerPresenter = (repository: IBusinessPartner) => (): Bu
 }
 
 export type BusinessPartnerPresenterType = {
-    handleInviteBusinessPartner: () => Promise<void>
+    handleInviteBusinessPartner: (partner: BusinessPartner) => Promise<BusinessPartner>
 }

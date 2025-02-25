@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
             {path: '/create-partner', element: <CreatePartnerPage/>},
             {path: '/create-deal', element: <CreateDealPage/>},
             {path: '/partners', element: <PartnerListPage/>},
-            {path: 'deals', element: <DealListPage/>},
+            {path: '/deals', element: <DealListPage/>},
         ],
     },
 ]);

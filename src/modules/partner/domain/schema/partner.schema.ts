@@ -6,6 +6,7 @@ export const partnerSchema = baseSchema.extend({
     lastname: z.string(),
     email: z.string(),
     type: z.string(), //CGP, broker,...
+    otherType: z.string().nullable(),
     phone: z.string(),
     address: z.string(),
     postalCode: z.string(),

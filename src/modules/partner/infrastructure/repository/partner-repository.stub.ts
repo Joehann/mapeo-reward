@@ -1,5 +1,6 @@
 import {IPartner} from "./partner.repository.interface.ts";
 import {Partner, PartnerToCreate} from "../../domain/partner.type.ts";
+import {partnersCollectionFake} from "../fake-data/partner.fake-data.ts";
 
 export class PartnerRepositoryStub implements IPartner {
     private partners: Partner[] = [];
@@ -13,6 +14,10 @@ export class PartnerRepositoryStub implements IPartner {
         }
         this.partners.push(fakeCreatedPartner)
         return this.partners[-1]
+    }
+
+    public async findAll(): Promise<Partner[]> {
+        return partnersCollectionFake
     }
 
     public add(partner: Partner): void {

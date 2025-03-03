@@ -1,6 +1,6 @@
 import {Col, Row} from "react-bootstrap";
 import {KPICard} from "../components/Card.tsx";
-import {KpiToDisplayType} from "../../../../modules/lead/domain/types/kpi.type.ts";
+import {KpiToDisplayType} from "../../../../modules/lead/domain/kpi.type.ts";
 import {useEffect, useState} from "react";
 import {usePresenters} from "../../../hooks/usePresenters.tsx";
 

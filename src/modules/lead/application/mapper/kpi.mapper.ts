@@ -1,4 +1,4 @@
-import {KpiFromApiType, KpiToDisplayType} from "../../domain/types/kpi.type.ts";
+import {KpiFromApiType, KpiToDisplayType} from "../../domain/kpi.type.ts";
 import {formatCurrency} from "../../../../core/utils/formater/amountWithCurrency.ts";
 
 export const kpiToDisplayMapper = (apiKpi: KpiFromApiType): KpiToDisplayType => {

@@ -1,4 +1,4 @@
-import {KpiFromApiType} from "../../domain/types/kpi.type.ts";
+import {KpiFromApiType} from "../../domain/kpi.type.ts";
 
 export const KPIFakeData: KpiFromApiType = {
     onGoingDeals: {

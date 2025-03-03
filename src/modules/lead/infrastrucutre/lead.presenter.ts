@@ -1,4 +1,4 @@
-import {KpiToDisplayType} from "../domain/types/kpi.type.ts";
+import {KpiToDisplayType} from "../domain/kpi.type.ts";
 import {kpiToDisplayMapper} from "../application/mapper/kpi.mapper.ts";
 import {ILeadRepository} from "./repository/lead.repository.interface.ts";
 

@@ -5,7 +5,7 @@ import {ChangeEvent, ReactElement, useEffect, useState} from "react";
 
 export const PartnerListPage = () => {
     const presenters = usePresenters();
-    const {handleRetrieveAllPartners} = presenters.businessPartner()
+    const {handleRetrieveAllPartners, handleFilterPartnersList} = presenters.businessPartner()
     const [partners, setPartners] = useState<Partner[] | null>(null);
     const [filteredPartners, setFilteredPartners] = useState<Partner[] | null>(null);
 
@@ -15,27 +15,6 @@ export const PartnerListPage = () => {
         }
     }, [partners, handleRetrieveAllPartners])
 
-    const handleFilterPartners = (key: string) => {
-        if (key.length < 3 || !partners) return setFilteredPartners(null)
-
-        const lowerKey = key.toLowerCase();
-        const filteredList = partners.filter(partner => {
-            const values = [
-                partner.id,
-                partner.firstname,
-                partner.lastname,
-                partner.email,
-                partner.phone,
-                partner.address,
-                partner.postalCode,
-                partner.city
-            ].map(value => value.toLowerCase());
-
-            return values.some(value => value.includes(lowerKey));
-        });
-        setFilteredPartners(filteredList)
-    }
-
     if (!partners) return null;
 
     return <Container>
@@ -44,7 +23,7 @@ export const PartnerListPage = () => {
             <InputGroup className={"my-3 w-50"}>
                 <InputGroup.Text>Filtrer les données</InputGroup.Text>
                 <input type="text" className="form-control"
-                       onChange={(e: ChangeEvent<HTMLInputElement>) => handleFilterPartners(e.target.value)}/>
+                       onChange={(e: ChangeEvent<HTMLInputElement>) => handleFilterPartnersList(e.target.value, partners, setFilteredPartners)}/>
             </InputGroup>
 
             <Table striped bordered>

@@ -12,12 +12,14 @@ export class PartnerRepositoryStub implements IPartner {
             createdAt: new Date('2025/02/25'),
             updatedAt: new Date('2025/02/25')
         }
-        this.partners.push(fakeCreatedPartner)
+        this.add(fakeCreatedPartner)
         return this.partners[-1]
     }
 
     public async findAll(): Promise<Partner[]> {
-        return partnersCollectionFake
+        this.set(partnersCollectionFake)
+        return this.partners
+
     }
 
     public add(partner: Partner): void {

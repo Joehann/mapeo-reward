@@ -3,9 +3,9 @@ import {
     BusinessPartnerPresenterType,
     partnerPresenter
 } from "../../modules/partner/infrastructure/partner.presenter.ts";
-import {LeadRepository} from "../../modules/lead/infrastrucutre/repository/lead.repository.ts";
+import {LeadRepositoryStub} from "../../modules/lead/infrastrucutre/repository/lead.repository.stub.ts";
 import {leadPresenter, LeadPresenterType} from "../../modules/lead/infrastrucutre/lead.presenter.ts";
-import {PartnerRepositoryStub} from "../../modules/partner/infrastructure/repository/partner-repository.stub.ts";
+import {PartnerRepositoryStub} from "../../modules/partner/infrastructure/repository/partner.repository.stub.ts";
 
 type PresenterContextType = {
     businessPartner: () => BusinessPartnerPresenterType
@@ -19,7 +19,7 @@ export const PresenterProvider = ({children}: { children: ReactElement }) => {
     const repositories = useMemo(() => {
         return {
             businessPartnerRepository: new PartnerRepositoryStub(),
-            leadRepository: new LeadRepository(),
+            leadRepository: new LeadRepositoryStub(),
         };
     }, []);
 

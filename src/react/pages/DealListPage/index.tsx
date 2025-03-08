@@ -2,6 +2,7 @@ import {usePresenters} from "../../hooks/usePresenters.tsx";
 import {ChangeEvent, ReactElement, useEffect, useState} from "react";
 import {leadToDisplay} from "../../../modules/lead/domain/lead.type.ts";
 import {Container, InputGroup, Table} from "react-bootstrap";
+import {formatCurrency} from "../../../core/utils/formater/amountWithCurrency.ts";
 
 export const DealListPage = () => {
     const presenters = usePresenters();
@@ -53,8 +54,8 @@ const PartnersListRow = (lead: leadToDisplay): ReactElement => {
             target='_blank'>{lead.propertyReference}</a>
         </td>
         <td>{lead.propertyAddress} - {lead.propertyZipCode} {lead.propertyLocation}</td>
-        <td>{lead.propertyPrice}€</td>
-        <td>{lead.propertyPrice * lead.commissionPercentage / 100}€</td>
+        <td>{formatCurrency({totalAmount: lead.propertyPrice})}</td>
+        <td>{formatCurrency({totalAmount: lead.propertyPrice * lead.commissionPercentage / 100})}</td>
         <td>{lead.status}</td>
     </tr>
 }

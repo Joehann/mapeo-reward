@@ -6,6 +6,7 @@ import {CreatePartnerPage} from "./pages/CreatePartner";
 import {CreateDealPage} from "./pages/CreateDeal";
 import {PartnerListPage} from "./pages/PartnerListPage";
 import {DealListPage} from "./pages/DealListPage";
+import {Index} from "./pages/NotFoundPage";
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,8 @@ export const router = createBrowserRouter([
             {path: '/create-deal', element: <CreateDealPage/>},
             {path: '/partners', element: <PartnerListPage/>},
             {path: '/deals', element: <DealListPage/>},
+            {path: '*', element: <Index/>}
+
         ],
     },
 ]);
